@@ -6,6 +6,9 @@ export default withMermaid(defineConfig({
   description: 'gstack 스킬 가이드 — 상황별로 어떤 스킬을 쓸지 빠르게 찾는 곳',
   lang: 'ko-KR',
   cleanUrls: true,
+  head: [
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+  ],
 
   vite: {
     optimizeDeps: {
@@ -119,5 +122,30 @@ export default withMermaid(defineConfig({
     footer: {
       message: 'gstack v0.15.1 — AI 빌더 프레임워크',
     },
+  },
+
+  // 한국어 사이트에서 불필요한 Inter 라틴 폰트 프리로드 제거 (FINDING-003)
+  async buildEnd(siteConfig) {
+    const { readdir, readFile, writeFile } = await import('fs/promises')
+    const { join } = await import('path')
+
+    async function stripInterPreload(dir: string): Promise<void> {
+      const entries = await readdir(dir, { withFileTypes: true })
+      await Promise.all(entries.map(async (entry) => {
+        const fullPath = join(dir, entry.name)
+        if (entry.isDirectory()) {
+          await stripInterPreload(fullPath)
+        } else if (entry.name.endsWith('.html')) {
+          const content = await readFile(fullPath, 'utf8')
+          const fixed = content.replace(
+            /<link rel="preload" href="[^"]*inter[^"]*" as="font"[^>]*>\n?/gi,
+            ''
+          )
+          if (fixed !== content) await writeFile(fullPath, fixed)
+        }
+      }))
+    }
+
+    await stripInterPreload(siteConfig.outDir)
   },
 }))
