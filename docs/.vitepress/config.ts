@@ -6,6 +6,15 @@ export default withMermaid(defineConfig({
   description: 'gstack 스킬 가이드 — 상황별로 어떤 스킬을 쓸지 빠르게 찾는 곳',
   lang: 'ko-KR',
 
+  vite: {
+    optimizeDeps: {
+      include: ['mermaid'],
+    },
+    ssr: {
+      noExternal: ['mermaid'],
+    },
+  },
+
   themeConfig: {
     nav: [
       { text: '홈', link: '/' },
