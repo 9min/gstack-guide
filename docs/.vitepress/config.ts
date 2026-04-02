@@ -5,6 +5,7 @@ export default withMermaid(defineConfig({
   title: 'gstack guide',
   description: 'gstack 스킬 가이드 — 상황별로 어떤 스킬을 쓸지 빠르게 찾는 곳',
   lang: 'ko-KR',
+  cleanUrls: true,
 
   vite: {
     optimizeDeps: {
