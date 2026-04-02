@@ -1,5 +1,12 @@
 /* gstack guide custom theme */
 
+/* 폰트: 한국어 우선 시스템 폰트. Inter 제거 (불필요한 라틴 폰트 프리로드 방지) */
+:root {
+  --vp-font-family-base: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Apple SD Gothic Neo", "Malgun Gothic", "Segoe UI", "Noto Sans KR",
+    "Noto Sans", Arial, sans-serif;
+}
+
 /* Brand: gstack orange-amber accent replacing VitePress default blue */
 :root {
   --vp-c-brand-1: #e07b39;
