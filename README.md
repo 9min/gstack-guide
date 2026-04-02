@@ -30,7 +30,7 @@ gstack이 새 버전으로 업데이트되면 스킬이 추가/변경/삭제될 
 
 ```bash
 # 1. gstack 업그레이드 (gstack 내장 스킬)
-/gstack-gstack-upgrade
+/gstack-upgrade
 
 # 2. 가이드 동기화 (변경 감지 + stub 생성 + 사이드바 업데이트)
 pnpm run sync
