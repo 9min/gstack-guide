@@ -1,0 +1,17 @@
+{
+  "시작하기": {
+    "order": 0,
+    "collapsed": null,
+    "fixed": [
+      { "text": "Quick Start", "link": "/quick-start" },
+      { "text": "워크플로우", "link": "/workflows" }
+    ]
+  },
+  "기획": { "order": 1, "collapsed": false },
+  "코드 품질": { "order": 2, "collapsed": false },
+  "배포": { "order": 3, "collapsed": false },
+  "디버깅": { "order": 4, "collapsed": false },
+  "디자인": { "order": 5, "collapsed": false },
+  "개발 도구": { "order": 6, "collapsed": true },
+  "문서/학습": { "order": 7, "collapsed": true }
+}
