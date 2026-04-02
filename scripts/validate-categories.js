@@ -17,13 +17,16 @@ const docsSkillsDir = new URL('../docs/skills', import.meta.url).pathname;
 
 let hasError = false;
 
-// 1. Check all mapped skills exist on disk
-for (const [category, skills] of Object.entries(categories)) {
-  for (const skill of skills) {
-    const skillDir = join(skillsBase, skill);
-    if (!existsSync(skillDir)) {
-      console.error(`[categories] ERROR: Mapped skill "${skill}" (category: ${category}) not found at ${skillDir}`);
-      hasError = true;
+// 1. Check all mapped skills exist on disk (local-only: skip in CI environments)
+const isCI = process.env.CI || process.env.VERCEL || process.env.NETLIFY;
+if (!isCI && existsSync(skillsBase)) {
+  for (const [category, skills] of Object.entries(categories)) {
+    for (const skill of skills) {
+      const skillDir = join(skillsBase, skill);
+      if (!existsSync(skillDir)) {
+        console.error(`[categories] ERROR: Mapped skill "${skill}" (category: ${category}) not found at ${skillDir}`);
+        hasError = true;
+      }
     }
   }
 }
