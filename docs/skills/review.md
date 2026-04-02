@@ -1,19 +1,44 @@
 ---
-title: /review
+title: /gstack-review
 category: 코드 품질
 version: 1.0.0
-generated: fallback
+generated: manual
 ---
 
-# /review
+# /gstack-review
 
-> Pre-landing PR review. Analyzes diff against the base branch for SQL safety, LLM trust
+> PR을 머지하기 전 diff를 분석해서 구조적 문제를 잡는 코드 리뷰.
 
-Pre-landing PR review. Analyzes diff against the base branch for SQL safety, LLM trust
-boundary violations, conditional side effects, and other structural issues. Use when
-asked to "review this PR", "code review", "pre-landing review", or "check my diff".
-Proactively suggest when the user is about to merge or land code changes. (gstack)
+## 무엇을 하는 스킬인가
 
----
+코드를 작성할 때는 보이지 않던 문제가 외부 시각으로 보면 바로 보입니다. `/gstack-review`는 현재 브랜치와 베이스 브랜치의 diff를 분석해서 SQL injection, LLM 신뢰 경계 위반, 조건부 사이드 이펙트, 누락된 에러 처리 같은 구조적 문제를 찾아냅니다.
 
-*가이드 페이지가 아직 준비되지 않았습니다. `npm run generate`로 재생성할 수 있습니다.*
+단순한 스타일 리뷰가 아닙니다. "이 코드가 프로덕션에 나갔을 때 어떤 상황에서 깨질 수 있나?"를 기준으로 검토합니다. 발견된 이슈는 심각도별로 분류되고, Critical 이슈는 수정 제안과 함께 제시됩니다.
+
+## 언제 쓰나
+
+- PR을 만들기 전 마지막으로 자기 코드를 리뷰하고 싶을 때
+- 오래 코딩했더니 집중력이 흐려져서 신선한 시각이 필요할 때
+- 보안에 민감한 코드(인증, 결제, 권한)를 건드렸을 때
+- 외부 데이터(사용자 입력, API 응답)를 처리하는 코드를 추가했을 때
+- 코드베이스에 처음 기여하는 사람이 패턴을 지키고 있는지 확인할 때
+
+## 어떻게 시작하나
+
+Claude Code에서 입력:
+
+```
+/gstack-review
+```
+
+현재 브랜치와 main/master의 diff를 자동으로 분석합니다. 특정 PR 번호를 지정할 수도 있습니다.
+
+## 실제 사용 예시
+
+사용자 프로필 수정 API를 추가하고 `/gstack-review`를 실행했다. "이 엔드포인트에서 `user_id`를 URL 파라미터에서 직접 읽는데, 현재 로그인한 사용자의 ID와 일치하는지 검증하는 코드가 없습니다 — 다른 사용자 프로필을 수정할 수 있습니다"라는 Critical 이슈가 나왔다. 인증 체크 코드를 추가하고 나서야 PR을 올렸다.
+
+## 관련 스킬
+
+- [/gstack-qa](/skills/qa) — 리뷰 전에 기능이 동작하는지 확인할 때
+- [/gstack-ship](/skills/ship) — 리뷰 통과 후 배포할 때
+- [/gstack-health](/skills/health) — 전체 코드베이스 품질을 주기적으로 체크할 때

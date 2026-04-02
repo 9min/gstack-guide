@@ -1,22 +1,43 @@
 ---
-title: /checkpoint
+title: /gstack-checkpoint
 category: 개발 도구
 version: 1.0.0
-generated: fallback
+generated: manual
 ---
 
-# /checkpoint
+# /gstack-checkpoint
 
-> Save and resume working state checkpoints. Captures git state, decisions made,
+> 지금까지의 작업 상태를 저장하고 나중에 정확히 그 지점에서 이어받는 체크포인트 스킬.
 
-Save and resume working state checkpoints. Captures git state, decisions made,
-and remaining work so you can pick up exactly where you left off — even across
-Conductor workspace handoffs between branches.
-Use when asked to "checkpoint", "save progress", "where was I", "resume",
-"what was I working on", or "pick up where I left off".
-Proactively suggest when a session is ending, the user is switching context,
-or before a long break. (gstack)
+## 무엇을 하는 스킬인가
 
----
+Claude Code 세션은 컨텍스트 한계가 있습니다. 세션이 끝나면 "어디까지 했지?", "뭘 결정했지?", "다음에 뭘 해야 하지?"를 다시 파악하는 데 시간이 걸립니다.
 
-*가이드 페이지가 아직 준비되지 않았습니다. `npm run generate`로 재생성할 수 있습니다.*
+`/gstack-checkpoint`는 현재 git 상태, 완료된 작업, 내린 결정, 남은 작업을 캡처해서 파일로 저장합니다. 다음 세션을 시작하면 자동으로 이 파일을 불러와서 "지난 번에 {브랜치}에서 {작업}을 하다 {지점}에서 멈췄습니다"라고 요약해줍니다. Conductor 워크스페이스 핸드오프에서도 브랜치 간 상태를 이어받을 수 있습니다.
+
+## 언제 쓰나
+
+- 긴 작업 세션을 마치고 내일 이어서 할 때
+- 여러 브랜치를 번갈아 작업할 때
+- 중요한 결정을 내렸는데 다음에도 그 맥락이 필요할 때
+- 세션이 중간에 컨텍스트 한계에 가까워질 때
+- 팀원에게 작업을 넘겨야 할 때
+
+## 어떻게 시작하나
+
+Claude Code에서 입력:
+
+```
+/gstack-checkpoint
+```
+
+자동으로 현재 상태를 캡처합니다. 저장된 체크포인트를 불러오려면 다음 세션에서 같은 명령어를 실행하면 됩니다.
+
+## 실제 사용 예시
+
+결제 통합 작업 중 세션을 닫아야 했다. `/gstack-checkpoint`를 실행했다. "feat/payment-integration 브랜치. Stripe webhook 수신 구현 완료. 남은 작업: 1) 환불 처리 엔드포인트, 2) 이메일 영수증 발송. 결정: idempotency key는 payment_intent_id 사용." 다음 날 새 세션에서 이 요약이 자동으로 로드됐고, 바로 환불 처리 코드부터 시작할 수 있었다.
+
+## 관련 스킬
+
+- [/gstack-ship](/skills/ship) — 체크포인트 저장 후 준비된 작업을 배포할 때
+- [/gstack-health](/skills/health) — 재개 전에 현재 코드 품질 상태를 확인할 때

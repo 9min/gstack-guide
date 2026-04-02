@@ -1,21 +1,45 @@
 ---
-title: /plan-eng-review
+title: /gstack-plan-eng-review
 category: 기획
 version: 1.0.0
-generated: fallback
+generated: manual
 ---
 
-# /plan-eng-review
+# /gstack-plan-eng-review
 
-> Eng manager-mode plan review. Lock in the execution plan — architecture,
+> 엔지니어링 매니저 시각으로 아키텍처와 구현 계획을 잠금하는 기술 리뷰.
 
-Eng manager-mode plan review. Lock in the execution plan — architecture,
-data flow, diagrams, edge cases, test coverage, performance. Walks through
-issues interactively with opinionated recommendations. Use when asked to
-"review the architecture", "engineering review", or "lock in the plan".
-Proactively suggest when the user has a plan or design doc and is about to
-start coding — to catch architecture issues before implementation. (gstack)
+## 무엇을 하는 스킬인가
 
----
+전략이 결정됐다면 이제 "어떻게 만드나?"를 확정해야 합니다. 코딩을 시작하고 나서 아키텍처 문제를 발견하면 재작업 비용이 큽니다 — 이 스킬은 그 전에 잡아냅니다.
 
-*가이드 페이지가 아직 준비되지 않았습니다. `npm run generate`로 재생성할 수 있습니다.*
+아키텍처, 데이터 흐름, 다이어그램, 엣지 케이스, 테스트 커버리지, 성능을 체계적으로 검토합니다. 단순 목록이 아니라 각 이슈를 인터랙티브하게 짚어가며 의견 있는 권고안을 제시합니다. 외부 시각(독립적인 서브에이전트)이 추가로 검토해서 놓친 위험 요소를 찾아줍니다.
+
+리뷰 결과는 테스트 계획 문서로 저장되고, 배포 전 체크리스트의 기준이 됩니다.
+
+## 언제 쓰나
+
+- 계획을 다 짰는데 코딩 시작 전에 한 번 더 확인하고 싶을 때
+- "이 아키텍처 선택이 맞나?" 확신이 필요할 때
+- 데이터베이스 스키마, API 구조, 캐시 전략 같은 되돌리기 어려운 결정을 할 때
+- 팀과 기술 스펙을 공유하기 전 문서화가 필요할 때
+- 성능 병목이나 보안 취약점을 미리 찾고 싶을 때
+
+## 어떻게 시작하나
+
+Claude Code에서 입력:
+
+```
+/gstack-plan-eng-review
+```
+
+현재 프로젝트의 디자인 문서나 CEO Plan을 자동으로 찾아 읽습니다. 7개 차원(아키텍처, 데이터 모델, API 설계, 에러 처리, 테스트, 성능, 보안)을 순서대로 검토합니다.
+
+## 실제 사용 예시
+
+결제 기능을 추가하는 계획을 엔지니어링 리뷰에 돌렸다. "Stripe webhook을 받을 때 idempotency key를 어떻게 처리하나요?"라는 질문이 나왔다. 계획에 없던 내용이었다. 이 엣지 케이스를 설계에 추가하지 않았으면 중복 결제 버그가 프로덕션에서 터졌을 것이다. 테스트 계획에 "webhook 중복 수신" 케이스가 추가됐다.
+
+## 관련 스킬
+
+- [/gstack-plan-ceo-review](/skills/plan-ceo-review) — 기술 리뷰 전에 전략 범위를 확정할 때
+- [/gstack-qa](/skills/qa) — 구현 완료 후 버그를 잡을 때

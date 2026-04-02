@@ -1,22 +1,45 @@
 ---
-title: /investigate
+title: /gstack-investigate
 category: 디버깅
 version: 1.0.0
-generated: fallback
+generated: manual
 ---
 
-# /investigate
+# /gstack-investigate
 
-> Systematic debugging with root cause investigation. Four phases: investigate,
+> 버그의 근본 원인을 체계적으로 찾아내는 디버깅 스킬 — 원인 없이 수정하지 않는다.
 
-Systematic debugging with root cause investigation. Four phases: investigate,
-analyze, hypothesize, implement. Iron Law: no fixes without root cause.
-Use when asked to "debug this", "fix this bug", "why is this broken",
-"investigate this error", or "root cause analysis".
-Proactively invoke this skill (do NOT debug directly) when the user reports
-errors, 500 errors, stack traces, unexpected behavior, "it was working
-yesterday", or is troubleshooting why something stopped working. (gstack)
+## 무엇을 하는 스킬인가
 
----
+"이상하게 가끔 에러가 난다", "어제까지 됐는데 오늘 안 된다" — 이런 버그는 증상만 보고 수정하면 같은 버그가 다른 형태로 다시 나타납니다.
 
-*가이드 페이지가 아직 준비되지 않았습니다. `npm run generate`로 재생성할 수 있습니다.*
+`/gstack-investigate`는 4단계로 진행합니다. **조사**: 로그, 스택 트레이스, 재현 조건을 수집합니다. **분석**: 증상과 코드 경로를 연결합니다. **가설 수립**: 원인 후보를 나열하고 각각을 검증합니다. **구현**: 근본 원인이 확정된 후에만 수정합니다.
+
+철칙: 근본 원인 없이 수정하지 않습니다. "일단 이렇게 해보자"식의 추측 수정을 하지 않습니다.
+
+## 언제 쓰나
+
+- 500 에러나 스택 트레이스를 마주쳤을 때
+- 간헐적으로 발생하는 버그가 있는데 원인을 모를 때
+- "어제까지 됐는데 오늘 안 된다"는 상황일 때
+- 특정 사용자에게만 버그가 발생할 때
+- `/gstack-qa`로 버그를 발견했는데 직접 고치기 전 원인 분석이 필요할 때
+
+## 어떻게 시작하나
+
+Claude Code에서 입력:
+
+```
+/gstack-investigate
+```
+
+에러 메시지, 스택 트레이스, 또는 버그를 재현하는 방법을 설명하면 됩니다.
+
+## 실제 사용 예시
+
+"사용자 일부가 로그인 후 무한 로딩에 걸린다"는 버그 리포트가 왔다. `/gstack-investigate`를 실행했다. 로그를 분석하니 특정 OAuth provider에서 오는 응답에 `email` 필드가 없는 경우가 있었다. 코드는 `user.email.toLowerCase()`를 무조건 실행하고 있었다 — null 체크가 없었다. 증상(무한 로딩)이 아니라 원인(null email)을 수정했고, 같은 패턴이 있는 다른 3곳도 같이 고쳤다.
+
+## 관련 스킬
+
+- [/gstack-qa](/skills/qa) — 수정 후 전체 회귀 테스트를 돌릴 때
+- [/gstack-health](/skills/health) — 디버깅 후 전반적인 코드 품질을 확인할 때

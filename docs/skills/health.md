@@ -1,20 +1,43 @@
 ---
-title: /health
+title: /gstack-health
 category: 코드 품질
 version: 1.0.0
-generated: fallback
+generated: manual
 ---
 
-# /health
+# /gstack-health
 
-> Code quality dashboard. Wraps existing project tools (type checker, linter,
+> 코드베이스 건강 점수 대시보드 — 타입 체커, 린터, 테스트, 사용하지 않는 코드를 한 번에 실행하고 0-10 점수로 추적.
 
-Code quality dashboard. Wraps existing project tools (type checker, linter,
-test runner, dead code detector, shell linter), computes a weighted composite
-0-10 score, and tracks trends over time. Use when: "health check",
-"code quality", "how healthy is the codebase", "run all checks",
-"quality score". (gstack)
+## 무엇을 하는 스킬인가
 
----
+"우리 코드 상태가 어때?"라는 질문에 막연하게 답하지 않아도 됩니다. `/gstack-health`는 프로젝트에 이미 있는 도구들을 실행합니다 — TypeScript 타입 체커, ESLint/Biome, Jest/Vitest, deadcode 탐지기, shellcheck — 그리고 각 결과를 가중 평균해서 0-10 점수를 냅니다.
 
-*가이드 페이지가 아직 준비되지 않았습니다. `npm run generate`로 재생성할 수 있습니다.*
+점수는 시간이 지나면서 추적됩니다. "지난 주보다 올랐나 내렸나?"를 바로 알 수 있습니다. 특정 도구가 없으면 건너뛰고 있는 것만 실행합니다.
+
+## 언제 쓰나
+
+- 스프린트가 끝나고 기술 부채가 얼마나 쌓였는지 확인할 때
+- 새 기능을 추가하기 전 현재 상태의 baseline을 잡을 때
+- "테스트 커버리지가 충분한가?" 대신 숫자로 보고 싶을 때
+- 팀 전체의 코드 품질 기준을 맞추고 싶을 때
+- CI 파이프라인을 세팅하기 전 현재 상태를 파악할 때
+
+## 어떻게 시작하나
+
+Claude Code에서 입력:
+
+```
+/gstack-health
+```
+
+프로젝트 루트에서 실행하면 됩니다. 사용 가능한 도구를 자동으로 감지해서 실행합니다.
+
+## 실제 사용 예시
+
+3개월째 개발 중인 프로젝트에 `/gstack-health`를 처음 실행했다. 결과: TypeScript 에러 12개, ESLint 경고 47개, 테스트 커버리지 31%, 사용하지 않는 함수 8개. 종합 점수 4.2/10. "배포 전에 이걸 다 고쳐야 하나?"라는 걱정 없이 "Critical만 먼저, Medium은 다음 스프린트"로 우선순위가 명확해졌다.
+
+## 관련 스킬
+
+- [/gstack-qa](/skills/qa) — health 점수 개선 후 실제 동작을 검증할 때
+- [/gstack-review](/skills/review) — 특정 PR의 코드 품질을 집중 검토할 때
