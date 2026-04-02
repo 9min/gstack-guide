@@ -255,6 +255,9 @@ async function main() {
   console.log('\nDone. Review docs/skills/ before committing.');
 }
 
+// Export for sync.js reuse
+export { parseFrontmatter, processSkill, generateGuide, getCategoryForSkill };
+
 main().catch(err => {
   console.error('Fatal:', err);
   process.exit(1);

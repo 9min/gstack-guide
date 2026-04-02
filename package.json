@@ -8,6 +8,7 @@
     "build": "node scripts/validate-categories.js && vitepress build docs",
     "preview": "vitepress preview docs",
     "generate": "node scripts/generate.js",
+    "sync": "node scripts/sync.js",
     "test": "vitest run"
   },
   "devDependencies": {
