@@ -1,0 +1,24 @@
+{
+  "name": "gstack-guide",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "gstack skills guide site",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "node scripts/validate-categories.js && vitepress build docs",
+    "preview": "vitepress preview docs",
+    "generate": "node scripts/generate.js",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "vitepress": "1.6.3",
+    "vitest": "^2.1.8"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.36.3",
+    "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.0",
+    "mermaid": "^11.14.0",
+    "vitepress-plugin-mermaid": "^2.0.17"
+  }
+}
