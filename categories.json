@@ -1,9 +1,9 @@
 {
-  "기획": ["office-hours", "plan-ceo-review", "plan-eng-review"],
-  "코드 품질": ["qa", "review", "health"],
-  "배포": ["ship"],
+  "기획": ["office-hours", "plan-ceo-review", "plan-eng-review", "autoplan"],
+  "코드 품질": ["qa", "qa-only", "review", "health", "benchmark", "codex", "cso"],
+  "배포": ["ship", "land-and-deploy", "canary", "setup-deploy"],
   "디버깅": ["investigate"],
-  "디자인": ["design-review"],
-  "개발 도구": ["checkpoint"],
-  "문서/학습": []
+  "디자인": ["design-consultation", "design-review", "design-shotgun", "design-html", "plan-design-review"],
+  "개발 도구": ["checkpoint", "freeze", "unfreeze", "guard", "careful", "browse", "connect-chrome", "setup-browser-cookies", "gstack-upgrade"],
+  "문서/학습": ["document-release", "learn", "retro"]
 }

@@ -8,12 +8,12 @@ gstack 스킬은 혼자 쓸 수도 있지만, 순서대로 쓸 때 진짜 위력
 
 ```mermaid
 flowchart LR
-    A[💡 아이디어] --> B[/gstack-office-hours\n브레인스토밍]
-    B --> C[/gstack-plan-ceo-review\n전략 검토]
-    C --> D[/gstack-plan-eng-review\n기술 설계]
-    D --> E[구현]
-    E --> F[/gstack-qa\nQA 테스트]
-    F --> G[/gstack-ship\n배포]
+    A["아이디어"] --> B["office-hours<br/>브레인스토밍"]
+    B --> C["plan-ceo-review<br/>전략 검토"]
+    C --> D["plan-eng-review<br/>기술 설계"]
+    D --> E["구현"]
+    E --> F["qa<br/>QA 테스트"]
+    F --> G["ship<br/>배포"]
 ```
 
 ### 각 단계에서 하는 일
@@ -35,11 +35,11 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    A[🔥 버그 발생] --> B[/gstack-investigate\n근본 원인 분석]
-    B --> C[수정]
-    C --> D[/gstack-qa\n재검증]
-    D --> E[/gstack-review\n코드 리뷰]
-    E --> F[/gstack-ship\n배포]
+    A["버그 발생"] --> B["investigate<br/>근본 원인 분석"]
+    B --> C["수정"]
+    C --> D["qa<br/>재검증"]
+    D --> E["review<br/>코드 리뷰"]
+    E --> F["ship<br/>배포"]
 ```
 
 ### 각 단계에서 하는 일

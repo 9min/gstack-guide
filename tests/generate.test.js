@@ -112,18 +112,24 @@ describe('categories.json', () => {
 // ---- Generated skill pages tests ----
 
 describe('generated skill pages', () => {
-  const day1Skills = ['office-hours', 'plan-ceo-review', 'plan-eng-review', 'qa',
-                      'review', 'health', 'ship', 'investigate', 'design-review', 'checkpoint'];
+  const allSkillPages = [
+    'office-hours', 'plan-ceo-review', 'plan-eng-review', 'qa', 'review', 'health',
+    'ship', 'investigate', 'design-review', 'checkpoint',
+    'autoplan', 'benchmark', 'browse', 'canary', 'careful', 'codex', 'connect-chrome',
+    'cso', 'design-consultation', 'design-html', 'design-shotgun', 'document-release',
+    'freeze', 'gstack-upgrade', 'guard', 'land-and-deploy', 'learn', 'plan-design-review',
+    'qa-only', 'retro', 'setup-browser-cookies', 'setup-deploy', 'unfreeze'
+  ];
 
-  it('all 10 Day 1 skill pages exist', () => {
-    for (const skill of day1Skills) {
+  it('all 33 skill pages exist', () => {
+    for (const skill of allSkillPages) {
       const path = join(ROOT, 'docs', 'skills', `${skill}.md`);
       expect(existsSync(path), `${skill}.md missing`).toBe(true);
     }
   });
 
   it('skill pages have required frontmatter fields', () => {
-    for (const skill of day1Skills) {
+    for (const skill of allSkillPages) {
       const path = join(ROOT, 'docs', 'skills', `${skill}.md`);
       if (!existsSync(path)) continue;
       const content = readFileSync(path, 'utf8');
@@ -134,7 +140,7 @@ describe('generated skill pages', () => {
   });
 
   it('skill pages do not expose internal bash paths', () => {
-    for (const skill of day1Skills) {
+    for (const skill of allSkillPages) {
       const path = join(ROOT, 'docs', 'skills', `${skill}.md`);
       if (!existsSync(path)) continue;
       const content = readFileSync(path, 'utf8');

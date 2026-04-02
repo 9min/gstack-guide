@@ -11,6 +11,21 @@ importers:
       '@anthropic-ai/sdk':
         specifier: ^0.36.3
         version: 0.36.3
+      '@braintree/sanitize-url':
+        specifier: ^7.1.2
+        version: 7.1.2
+      cytoscape:
+        specifier: ^3.33.1
+        version: 3.33.1
+      cytoscape-cose-bilkent:
+        specifier: ^4.1.0
+        version: 4.1.0(cytoscape@3.33.1)
+      dayjs:
+        specifier: ^1.11.20
+        version: 1.11.20
+      debug:
+        specifier: ^4.4.3
+        version: 4.4.3
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
