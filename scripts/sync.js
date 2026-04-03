@@ -162,6 +162,25 @@ function isInCategories(skillName) {
   return Object.values(categories).flat().includes(skillName);
 }
 
+// ---- Config.ts footer version update ----
+
+function updateFooterVersion() {
+  const versionPath = join(homedir(), '.claude', 'skills', 'gstack', 'VERSION');
+  if (!existsSync(versionPath)) return null;
+  const version = readFileSync(versionPath, 'utf8').trim();
+  let content = readFileSync(CONFIG_PATH, 'utf8');
+  const match = content.match(/message: 'gstack v[\d.]+ — /);
+  if (!match) return null;
+  const current = match[0].match(/v([\d.]+)/)?.[1];
+  if (current === version) return null;
+  const updated = content.replace(
+    /message: 'gstack v[\d.]+ — /,
+    `message: 'gstack v${version} — `
+  );
+  writeFileSync(CONFIG_PATH, updated);
+  return { from: current, to: version };
+}
+
 // ---- Config.ts sidebar update ----
 
 const SIDEBAR_START = '      // --- AUTO-GENERATED SIDEBAR START ---';
@@ -281,6 +300,12 @@ function main() {
   }
 
   saveState(state);
+
+  // config.ts footer 버전 업데이트
+  const versionResult = updateFooterVersion();
+  if (versionResult) {
+    console.log(`\nfooter 버전 업데이트: v${versionResult.from} → v${versionResult.to}`);
+  }
 
   // config.ts 사이드바 업데이트
   if (added.length > 0 || removed.length > 0) {
