@@ -34,6 +34,13 @@ codex는 OpenAI Codex CLI를 래핑하여 세 가지 모드를 제공합니다. 
 
 인증 미들웨어를 새로 작성했습니다. 일반 코드 리뷰에서 문제가 없다고 나와서, `/gstack-codex`의 Challenge 모드를 실행했습니다. Codex가 토큰 만료 직전의 레이스 컨디션, 리프레시 토큰이 동시에 여러 번 사용될 때의 동작, 그리고 에러 응답에서 스택 트레이스가 노출되는 문제를 찾아냈습니다. 일반적인 리뷰에서는 놓쳤을 세 가지 이슈를 배포 전에 수정할 수 있었습니다.
 
+## 음성 입력
+
+AquaVoice, Whisper 등 음성 입력 도구에서 다음 표현으로 실행할 수 있습니다:
+
+- "code x" / "code ex"
+- "get another opinion"
+
 ## 관련 스킬
 
 - [/gstack-autoplan](/skills/autoplan) — 기획 단계에서 전체 리뷰 파이프라인을 돌릴 때

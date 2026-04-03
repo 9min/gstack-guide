@@ -120,7 +120,7 @@ export default withMermaid(defineConfig({
     ],
 
     footer: {
-      message: 'gstack v0.15.1 — AI 빌더 프레임워크',
+      message: 'gstack v0.15.2.1 — AI 빌더 프레임워크',
     },
   },
 

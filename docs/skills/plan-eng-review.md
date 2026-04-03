@@ -39,6 +39,14 @@ Claude Code에서 입력:
 
 결제 기능을 추가하는 계획을 엔지니어링 리뷰에 돌렸다. "Stripe webhook을 받을 때 idempotency key를 어떻게 처리하나요?"라는 질문이 나왔다. 계획에 없던 내용이었다. 이 엣지 케이스를 설계에 추가하지 않았으면 중복 결제 버그가 프로덕션에서 터졌을 것이다. 테스트 계획에 "webhook 중복 수신" 케이스가 추가됐다.
 
+## 음성 입력
+
+AquaVoice, Whisper 등 음성 입력 도구에서 다음 표현으로 실행할 수 있습니다:
+
+- "tech review"
+- "technical review"
+- "plan engineering review"
+
 ## 관련 스킬
 
 - [/gstack-plan-ceo-review](/skills/plan-ceo-review) — 기술 리뷰 전에 전략 범위를 확정할 때

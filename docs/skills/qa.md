@@ -39,6 +39,14 @@ Claude Code에서 입력:
 
 로그인 기능을 추가하고 `/gstack-qa`를 실행했다. Standard 티어로 돌리자 3개의 버그가 발견됐다 — 비밀번호 6자 미만 입력 시 에러 메시지 없음(High), 로그인 성공 후 리다이렉트 URL 누락(High), 다크모드에서 버튼 텍스트 보이지 않음(Medium). 3개 모두 자동으로 수정되고 커밋됐다. Health Score가 68에서 89로 올라갔다.
 
+## 음성 입력
+
+AquaVoice, Whisper 등 음성 입력 도구에서 다음 표현으로 실행할 수 있습니다:
+
+- "quality check"
+- "test the app"
+- "run QA"
+
 ## 관련 스킬
 
 - [/gstack-investigate](/skills/investigate) — 특정 버그 하나의 근본 원인을 파고들 때
