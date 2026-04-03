@@ -16,7 +16,7 @@ curl -fsSL https://raw.githubusercontent.com/garrynewman/gstack/main/install.sh 
 
 ```bash
 gstack --version
-# gstack v0.15.1
+# gstack v0.15.2.1
 ```
 
 ## 2. 프로젝트에서 첫 스킬 실행
