@@ -168,6 +168,8 @@ function updateFooterVersion() {
   const versionPath = join(homedir(), '.claude', 'skills', 'gstack', 'VERSION');
   if (!existsSync(versionPath)) return null;
   const version = readFileSync(versionPath, 'utf8').trim();
+  if (!version) return null;
+  if (!/^\d+(\.\d+)*$/.test(version)) return null;
   let content = readFileSync(CONFIG_PATH, 'utf8');
   const match = content.match(/message: 'gstack v[\d.]+ — /);
   if (!match) return null;
@@ -253,6 +255,12 @@ function main() {
   console.log(`  삭제: ${removed.length}개 ${removed.length > 0 ? `(${removed.join(', ')})` : ''}`);
   console.log(`  동일: ${unchanged.length}개\n`);
 
+  // config.ts footer 버전 업데이트 (스킬 변경 여부와 무관하게 항상 실행)
+  const versionResult = updateFooterVersion();
+  if (versionResult) {
+    console.log(`footer 버전 업데이트: v${versionResult.from} → v${versionResult.to}\n`);
+  }
+
   if (added.length === 0 && changed.length === 0 && removed.length === 0) {
     console.log('변경 사항 없음. 이미 최신 상태입니다.');
     return;
@@ -300,12 +308,6 @@ function main() {
   }
 
   saveState(state);
-
-  // config.ts footer 버전 업데이트
-  const versionResult = updateFooterVersion();
-  if (versionResult) {
-    console.log(`\nfooter 버전 업데이트: v${versionResult.from} → v${versionResult.to}`);
-  }
 
   // config.ts 사이드바 업데이트
   if (added.length > 0 || removed.length > 0) {
