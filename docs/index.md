@@ -12,9 +12,6 @@ hero:
     - theme: alt
       text: 워크플로우 보기
       link: /workflows
-    - theme: alt
-      text: gstack GitHub
-      link: https://github.com/garrytan/gstack
 ---
 
 ## 상황으로 찾기
