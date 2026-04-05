@@ -33,15 +33,15 @@ Claude Code를 열고 프로젝트 디렉토리에서:
 QA 완료 후 출력 예시:
 
 ```
-=== QA Report ===
-Health Score: 84/100 (Before: 71)
+=== QA 리포트 ===
+Health Score: 84/100 (이전: 71)
 
-Critical: 0 (was 2) ✓
-High:     1 (was 3) ✓
-Medium:   4 (was 6) ✓
+Critical: 0 (이전: 2) ✓
+High:     1 (이전: 3) ✓
+Medium:   4 (이전: 6) ✓
 
-Fixed: 4 bugs committed
-Remaining: 1 high-priority (image alt text — deferred)
+수정 완료: 버그 4개 자동 커밋
+미해결: 1개 우선순위 높음 (이미지 alt 텍스트 — 보류)
 ```
 
 - **Health Score**: 0~100, 80+ 이면 ship 준비 완료
