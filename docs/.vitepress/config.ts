@@ -118,6 +118,7 @@ export default withMermaid(defineConfig({
     },
 
     socialLinks: [
+      { icon: 'github', link: 'https://github.com/garrytan/gstack' },
       { icon: 'github', link: 'https://github.com/9min/gstack-guide' },
     ],
 
