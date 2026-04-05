@@ -118,12 +118,11 @@ export default withMermaid(defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/garrytan/gstack' },
-      { icon: 'github', link: 'https://github.com/9min/gstack-guide' },
+      { icon: 'github', link: 'https://github.com/garrytan/gstack', ariaLabel: 'gstack GitHub' },
     ],
 
     footer: {
-      message: 'gstack v0.15.9.0 — AI 빌더 프레임워크',
+      message: 'gstack v0.15.9.0 — AI 빌더 프레임워크 | <a href="https://github.com/9min/gstack-guide" target="_blank">가이드 소스</a>',
     },
   },
 
