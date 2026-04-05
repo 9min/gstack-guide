@@ -16,7 +16,7 @@ hero:
 
 ## 상황으로 찾기
 
-어떤 상황인지 고르면 맞는 스킬로 안내합니다. 총 33개 스킬.
+어떤 상황인지 고르면 맞는 스킬로 안내합니다. 총 35개 스킬.
 
 ---
 
@@ -27,6 +27,7 @@ hero:
 - [/gstack-office-hours](/skills/office-hours) — 아이디어 브레인스토밍, "이거 만들 가치 있어?"
 - [/gstack-plan-ceo-review](/skills/plan-ceo-review) — 전략 검토, 범위 결정, 빌드/바이/킬
 - [/gstack-plan-eng-review](/skills/plan-eng-review) — 기술 설계 검토, 아키텍처, 리스크 분석
+- [/gstack-plan-devex-review](/skills/plan-devex-review) — 개발자 경험 계획 검토, TTHW 설계
 - [/gstack-autoplan](/skills/autoplan) — 전체 리뷰 파이프라인 자동 실행
 
 ---
@@ -38,6 +39,7 @@ hero:
 - [/gstack-qa](/skills/qa) — 웹앱 전체 QA 테스트 + 버그 수정
 - [/gstack-qa-only](/skills/qa-only) — QA 리포트만 (수정 없이)
 - [/gstack-review](/skills/review) — PR 코드 리뷰, diff 분석
+- [/gstack-devex-review](/skills/devex-review) — 개발자 경험 라이브 감사, TTHW 측정
 - [/gstack-health](/skills/health) — 코드베이스 건강 점수, 기술 부채 감지
 - [/gstack-benchmark](/skills/benchmark) — 성능 회귀 감지, Core Web Vitals
 - [/gstack-codex](/skills/codex) — 독립적 세컨드 오피니언 (OpenAI Codex)
@@ -86,9 +88,9 @@ UI/UX를 설계하거나 다듬을 때.
 - [/gstack-guard](/skills/guard) — 최대 안전 모드 (careful + freeze)
 - [/gstack-careful](/skills/careful) — 위험한 명령 경고
 - [/gstack-browse](/skills/browse) — 헤드리스 브라우저 QA
-- [/gstack-connect-chrome](/skills/connect-chrome) — 실제 Chrome 브라우저 연결
+- [/gstack-open-gstack-browser](/skills/open-gstack-browser) — 실제 Chrome 브라우저 연결 (사이드바 포함)
 - [/gstack-setup-browser-cookies](/skills/setup-browser-cookies) — 브라우저 쿠키 가져오기
-- [/gstack-gstack-upgrade](/skills/gstack-upgrade) — gstack 업그레이드
+- [/gstack-upgrade](/skills/gstack-upgrade) — gstack 업그레이드
 
 ---
 

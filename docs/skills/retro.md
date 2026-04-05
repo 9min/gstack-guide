@@ -1,7 +1,7 @@
 ---
 title: /gstack-retro
 category: 문서/학습
-version: v1.0.0
+version: 2.0.0
 generated: manual
 ---
 
@@ -27,7 +27,21 @@ generated: manual
 
 ## 어떻게 시작하나
 
-`/gstack-retro`를 입력하면 최근 1주간의 커밋 히스토리와 코드 변경을 분석하기 시작합니다. 분석이 끝나면 전체 요약, 팀원별 분석, 개선 제안이 포함된 회고 보고서를 생성합니다.
+Claude Code에서 입력:
+
+```
+/gstack-retro
+```
+
+최근 1주간의 커밋 히스토리와 코드 변경을 분석해 전체 요약, 팀원별 분석, 개선 제안이 포함된 회고 보고서를 생성합니다.
+
+여러 프로젝트와 AI 도구 전체를 한 번에 집계하려면:
+
+```
+/gstack-retro global
+```
+
+Claude Code, Codex, Gemini 등 모든 AI 코딩 도구의 커밋을 프로젝트를 넘나들며 분석합니다.
 
 ## 실제 사용 예시
 

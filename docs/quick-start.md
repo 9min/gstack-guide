@@ -2,24 +2,23 @@
 
 gstack을 처음 쓰는 경우 이 가이드를 따라 5분 안에 첫 스킬을 실행할 수 있습니다.
 
+**필요 사항:** [Claude Code](https://docs.anthropic.com/en/docs/claude-code), [Git](https://git-scm.com/), [Bun](https://bun.sh/) v1.0+, [Node.js](https://nodejs.org/) (Windows만)
+
 ## 1. gstack 설치
 
-```bash
-# Homebrew (권장)
-brew install gstack
+Claude Code를 열고 아래 텍스트를 그대로 붙여넣으세요. Claude가 나머지를 처리합니다.
 
-# 또는 수동 설치
-curl -fsSL https://raw.githubusercontent.com/garrynewman/gstack/main/install.sh | bash
-```
+> Install gstack: run **`git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack && cd ~/.claude/skills/gstack && ./setup`** then add a "gstack" section to CLAUDE.md that says to use the /browse skill from gstack for all web browsing, never use mcp\_\_claude-in-chrome\_\_\* tools, and lists the available skills: /office-hours, /plan-ceo-review, /plan-eng-review, /plan-design-review, /design-consultation, /design-shotgun, /design-html, /review, /ship, /land-and-deploy, /canary, /benchmark, /browse, /open-gstack-browser, /qa, /qa-only, /design-review, /devex-review, /plan-devex-review, /setup-browser-cookies, /setup-deploy, /retro, /investigate, /document-release, /codex, /cso, /autoplan, /careful, /freeze, /guard, /unfreeze, /gstack-upgrade, /learn. Then ask the user if they also want to add gstack to the current project so teammates get it.
 
-설치 후 버전 확인:
+약 30초면 설치가 완료됩니다.
 
-```bash
-gstack --version
-# gstack v0.15.2.1
-```
+## 2. 팀원과 공유 (선택)
 
-## 2. 프로젝트에서 첫 스킬 실행
+레포에 gstack을 추가하면 팀원이 `git clone`만으로 바로 쓸 수 있습니다.
+
+> Add gstack to this project: run **`cp -Rf ~/.claude/skills/gstack .claude/skills/gstack && rm -rf .claude/skills/gstack/.git && cd .claude/skills/gstack && ./setup`** then add a "gstack" section to this project's CLAUDE.md that says to use the /browse skill from gstack for all web browsing, never use mcp\_\_claude-in-chrome\_\_\* tools, and lists the available skills, and tells Claude that if gstack skills aren't working, run `cd .claude/skills/gstack && ./setup` to build the binary and register skills.
+
+## 3. 첫 스킬 실행
 
 Claude Code를 열고 프로젝트 디렉토리에서:
 
@@ -27,9 +26,9 @@ Claude Code를 열고 프로젝트 디렉토리에서:
 /gstack-qa
 ```
 
-입력하면 QA 스킬이 실행됩니다. 사이트 URL 또는 로컬 서버 주소를 묻고, 자동으로 버그를 찾아 수정합니다.
+사이트 URL 또는 로컬 서버 주소를 묻고, 자동으로 버그를 찾아 수정합니다.
 
-## 3. 결과 해석하기
+## 4. 결과 해석하기
 
 QA 완료 후 출력 예시:
 
@@ -49,7 +48,7 @@ Remaining: 1 high-priority (image alt text — deferred)
 - **Critical/High**: 배포 전 반드시 수정
 - **Fixed**: gstack이 자동 수정 + 커밋한 버그 수
 
-## 4. 다음 단계
+## 5. 다음 단계
 
 QA가 끝났다면 바로 배포할 수 있습니다:
 

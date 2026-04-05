@@ -1,7 +1,7 @@
 ---
 title: /gstack-plan-design-review
 category: 디자인
-version: v1.0.0
+version: 2.0.0
 generated: manual
 ---
 
