@@ -53,8 +53,9 @@ docs/
   .vitepress/
     config.ts          # VitePress 설정 + 사이드바
     theme/custom.css   # 브랜드 컬러, 폰트
-  skills/              # 33개 스킬 가이드 페이지
-  public/favicon.svg   # 파비콘
+  skills/              # 35개 스킬 가이드 페이지
+  public/favicon.svg   # 파비콘 (SVG)
+  public/favicon.ico   # 파비콘 (ICO, 브라우저 자동 요청용)
   index.md             # 홈페이지
   quick-start.md       # 퀵스타트
   workflows.md         # 워크플로우
