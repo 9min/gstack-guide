@@ -3,12 +3,14 @@
     "office-hours",
     "plan-ceo-review",
     "plan-eng-review",
+    "plan-devex-review",
     "autoplan"
   ],
   "코드 품질": [
     "qa",
     "qa-only",
     "review",
+    "devex-review",
     "health",
     "benchmark",
     "codex",
@@ -39,9 +41,7 @@
     "browse",
     "setup-browser-cookies",
     "gstack-upgrade",
-    "devex-review",
     "open-gstack-browser",
-    "plan-devex-review",
     "pair-agent"
   ],
   "문서/학습": [
