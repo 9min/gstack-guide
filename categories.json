@@ -41,7 +41,8 @@
     "gstack-upgrade",
     "devex-review",
     "open-gstack-browser",
-    "plan-devex-review"
+    "plan-devex-review",
+    "pair-agent"
   ],
   "문서/학습": [
     "document-release",

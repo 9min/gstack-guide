@@ -27,6 +27,7 @@ export default withMermaid(defineConfig({
     ],
 
     sidebar: [
+      // --- AUTO-GENERATED SIDEBAR START ---
       {
         text: '시작하기',
         items: [
@@ -41,7 +42,6 @@ export default withMermaid(defineConfig({
           { text: '/gstack-office-hours', link: '/skills/office-hours' },
           { text: '/gstack-plan-ceo-review', link: '/skills/plan-ceo-review' },
           { text: '/gstack-plan-eng-review', link: '/skills/plan-eng-review' },
-          { text: '/gstack-plan-devex-review', link: '/skills/plan-devex-review' },
           { text: '/gstack-autoplan', link: '/skills/autoplan' },
         ],
       },
@@ -52,7 +52,6 @@ export default withMermaid(defineConfig({
           { text: '/gstack-qa', link: '/skills/qa' },
           { text: '/gstack-qa-only', link: '/skills/qa-only' },
           { text: '/gstack-review', link: '/skills/review' },
-          { text: '/gstack-devex-review', link: '/skills/devex-review' },
           { text: '/gstack-health', link: '/skills/health' },
           { text: '/gstack-benchmark', link: '/skills/benchmark' },
           { text: '/gstack-codex', link: '/skills/codex' },
@@ -97,9 +96,12 @@ export default withMermaid(defineConfig({
           { text: '/gstack-guard', link: '/skills/guard' },
           { text: '/gstack-careful', link: '/skills/careful' },
           { text: '/gstack-browse', link: '/skills/browse' },
-          { text: '/gstack-open-gstack-browser', link: '/skills/open-gstack-browser' },
           { text: '/gstack-setup-browser-cookies', link: '/skills/setup-browser-cookies' },
           { text: '/gstack-upgrade', link: '/skills/gstack-upgrade' },
+          { text: '/gstack-devex-review', link: '/skills/devex-review' },
+          { text: '/gstack-open-gstack-browser', link: '/skills/open-gstack-browser' },
+          { text: '/gstack-plan-devex-review', link: '/skills/plan-devex-review' },
+          { text: '/gstack-pair-agent', link: '/skills/pair-agent' },
         ],
       },
       {
@@ -111,6 +113,7 @@ export default withMermaid(defineConfig({
           { text: '/gstack-retro', link: '/skills/retro' },
         ],
       },
+      // --- AUTO-GENERATED SIDEBAR END ---
     ],
 
     search: {
@@ -122,7 +125,7 @@ export default withMermaid(defineConfig({
     ],
 
     footer: {
-      message: 'gstack v0.15.9.0 — AI 빌더 프레임워크 | <a href="https://github.com/9min/gstack-guide" target="_blank">가이드 소스</a>',
+      message: 'gstack v0.16.3.0 — AI 빌더 프레임워크 | <a href="https://github.com/9min/gstack-guide" target="_blank">가이드 소스</a>',
     },
   },
 

@@ -15,6 +15,12 @@ generated: manual
 
 `/gstack-ship`은 이 전체 과정을 순서대로 실행합니다. 각 단계에서 이슈가 발견되면 멈추고 물어봅니다 — 블라인드로 진행하지 않습니다. 테스트 실패, 머지 충돌, 열려 있는 TODO 같은 것들이 PR 만들기 전에 걸립니다.
 
+PR 생성 직전에는 `/gstack-review`와 동일한 전문가 스페셜리스트 군단(testing, maintainability, security, performance, data-migration, api-contract, design, red-team)이 full 리뷰를 수행합니다.
+
+**재실행 동작** — `/gstack-ship`을 다시 실행하면 테스트, 커버리지 감사, 리뷰, 적대적 검토, TODO 확인, document-release 등 모든 검증 단계를 처음부터 다시 실행합니다. push, PR 생성, VERSION 범프 같은 동작(action)만 멱등성이 보장됩니다. "다시 실행 = 체크리스트 전체 재실행"으로 이해하면 됩니다.
+
+이전 `/gstack-review`나 `/gstack-ship`에서 이미 스킵한 이슈는 관련 코드가 변경되지 않은 한 재실행 시에도 자동 억제됩니다.
+
 ## 언제 쓰나
 
 - 기능 개발이 끝나고 PR을 만들어야 할 때
