@@ -13,5 +13,6 @@
   "디버깅": { "order": 4, "collapsed": false },
   "디자인": { "order": 5, "collapsed": false },
   "개발 도구": { "order": 6, "collapsed": true },
-  "문서/학습": { "order": 7, "collapsed": true }
+  "개인화": { "order": 7, "collapsed": true },
+  "문서/학습": { "order": 8, "collapsed": true }
 }

@@ -99,9 +99,16 @@ export default withMermaid(defineConfig({
           { text: '/gstack-careful', link: '/skills/careful' },
           { text: '/gstack-browse', link: '/skills/browse' },
           { text: '/gstack-setup-browser-cookies', link: '/skills/setup-browser-cookies' },
-          { text: '/gstack-upgrade', link: '/skills/gstack-upgrade' },
+          { text: '/gstack-gstack-upgrade', link: '/skills/gstack-upgrade' },
           { text: '/gstack-open-gstack-browser', link: '/skills/open-gstack-browser' },
           { text: '/gstack-pair-agent', link: '/skills/pair-agent' },
+        ],
+      },
+      {
+        text: '개인화',
+        collapsed: true,
+        items: [
+          { text: '/gstack-plan-tune', link: '/skills/plan-tune' },
         ],
       },
       {
@@ -125,7 +132,7 @@ export default withMermaid(defineConfig({
     ],
 
     footer: {
-      message: 'gstack v0.16.3.0 — AI 빌더 프레임워크 | <a href="https://github.com/9min/gstack-guide" target="_blank">가이드 소스</a>',
+      message: 'gstack v1.1.1.0 — AI 빌더 프레임워크 | <a href="https://github.com/9min/gstack-guide" target="_blank">가이드 소스</a>',
     },
   },
 

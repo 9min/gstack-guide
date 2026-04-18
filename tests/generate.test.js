@@ -113,15 +113,16 @@ describe('categories.json', () => {
 
 describe('generated skill pages', () => {
   const allSkillPages = [
-    'office-hours', 'plan-ceo-review', 'plan-eng-review', 'qa', 'review', 'health',
-    'ship', 'investigate', 'design-review', 'checkpoint',
-    'autoplan', 'benchmark', 'browse', 'canary', 'careful', 'codex', 'connect-chrome',
-    'cso', 'design-consultation', 'design-html', 'design-shotgun', 'document-release',
-    'freeze', 'gstack-upgrade', 'guard', 'land-and-deploy', 'learn', 'plan-design-review',
-    'qa-only', 'retro', 'setup-browser-cookies', 'setup-deploy', 'unfreeze'
+    'autoplan', 'benchmark', 'browse', 'canary', 'careful', 'checkpoint', 'codex',
+    'cso', 'design-consultation', 'design-html', 'design-review', 'design-shotgun',
+    'devex-review', 'document-release', 'freeze', 'gstack-upgrade', 'guard', 'health',
+    'investigate', 'land-and-deploy', 'learn', 'office-hours', 'open-gstack-browser',
+    'pair-agent', 'plan-ceo-review', 'plan-design-review', 'plan-devex-review',
+    'plan-eng-review', 'plan-tune', 'qa', 'qa-only', 'retro', 'review',
+    'setup-browser-cookies', 'setup-deploy', 'ship', 'unfreeze'
   ];
 
-  it('all 33 skill pages exist', () => {
+  it('all 37 skill pages exist', () => {
     for (const skill of allSkillPages) {
       const path = join(ROOT, 'docs', 'skills', `${skill}.md`);
       expect(existsSync(path), `${skill}.md missing`).toBe(true);

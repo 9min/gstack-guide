@@ -44,6 +44,9 @@
     "open-gstack-browser",
     "pair-agent"
   ],
+  "개인화": [
+    "plan-tune"
+  ],
   "문서/학습": [
     "document-release",
     "learn",
