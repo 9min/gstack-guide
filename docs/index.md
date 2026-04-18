@@ -16,7 +16,7 @@ hero:
 
 ## 상황으로 찾기
 
-어떤 상황인지 고르면 맞는 스킬로 안내합니다. 총 36개 스킬.
+어떤 상황인지 고르면 맞는 스킬로 안내합니다. 총 37개 스킬.
 
 ---
 
@@ -92,6 +92,14 @@ UI/UX를 설계하거나 다듬을 때.
 - [/gstack-setup-browser-cookies](/skills/setup-browser-cookies) — 브라우저 쿠키 가져오기
 - [/gstack-pair-agent](/skills/pair-agent) — 원격 AI 에이전트에 브라우저 페어링
 - [/gstack-upgrade](/skills/gstack-upgrade) — gstack 업그레이드
+
+---
+
+### 개인화
+
+gstack을 내 스타일에 맞게 튜닝할 때.
+
+- [/gstack-plan-tune](/skills/plan-tune) — 질문 학습 + 개발자 프로필 + 빌더 아키타입
 
 ---
 
